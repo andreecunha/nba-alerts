@@ -1,0 +1,6 @@
+__pycache__/
+subs.db
+token.txt
+logos/
+.git/
+*.zip

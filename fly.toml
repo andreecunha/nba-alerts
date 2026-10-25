@@ -1,0 +1,18 @@
+# Configuração do Fly.io: o bot corre sempre ligado, sem porta HTTP (não é um site).
+app = "nba-alerts"
+primary_region = "ams"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  DB_PATH = "/data/subs.db"
+
+# Disco persistente para a lista de jogadores sobreviver às atualizações.
+[mounts]
+  source = "nba_dados"
+  destination = "/data"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"
